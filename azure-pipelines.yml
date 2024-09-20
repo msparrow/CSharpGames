@@ -44,7 +44,7 @@ steps:
       command: 'buildAndPush'
       repository: '$(imageRepository)'
       dockerfile: '$(dockerfilePath)'
-      tags: '$(tag)'
+      tags: 'latest'
       containerRegistry: '$(dockerRegistryServiceConnection)'
   
   - task: AzureWebAppContainer@1
@@ -53,4 +53,4 @@ steps:
       azureSubscription: 'AzureSubscriptionConnection'  # Replace with your service connection name
       appName: 'csharpgames'                        # Your web app name
       imageName: 'msparrow224/csharpgames'
-      tag: 'latest'                                    # Or use $(Build.BuildId) if tagging images with build IDs
+      tag: '$(tag)'                                    # Or use $(Build.BuildId) if tagging images with build IDs
