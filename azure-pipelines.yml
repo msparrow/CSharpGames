@@ -48,9 +48,9 @@ steps:
       containerRegistry: '$(dockerRegistryServiceConnection)'
   
   - task: AzureWebAppContainer@1
-  displayName: 'Deploy to Azure Web App'
-  inputs:
-    azureSubscription: 'AzureSubscriptionConnection'  # Replace with your service connection name
-    appName: 'csharpgamesapp'                        # Your web app name
-    imageName: 'msparrow224/csharpgames'
-    tag: 'latest'                                    # Or use $(Build.BuildId) if tagging images with build IDs
+    displayName: 'Deploy to Azure Web App'
+    inputs:
+      azureSubscription: 'AzureSubscriptionConnection'  # Replace with your service connection name
+      appName: 'csharpgamesapp'                        # Your web app name
+      imageName: 'msparrow224/csharpgames'
+      tag: 'latest'                                    # Or use $(Build.BuildId) if tagging images with build IDs
