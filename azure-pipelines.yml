@@ -2,7 +2,9 @@ trigger:
   - main
 
 pool:
-  vmImage: 'ubuntu-latest'
+  name: Default
+  demands:
+    - agent.name -equals MATT
 
 variables:
   dockerRegistryServiceConnection: 'DockerHubConnection'  # Ensure this matches your service connection name
