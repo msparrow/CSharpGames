@@ -1,0 +1,43 @@
+# Docker
+# Build a Docker image
+# https://docs.microsoft.com/azure/devops/pipelines/languages/docker
+
+# azure-pipelines.yml
+trigger:
+- main
+
+pool:
+  vmImage: 'ubuntu-latest'
+
+variables:
+  dockerRegistryServiceConnection: 'DockerHubConnection'  # Update this if your service connection has a different name
+  imageRepository: 'msparrow224/csharpgames'             # Replace with your Docker Hub username and repository
+  dockerfilePath: 'Dockerfile'                            # Path to your Dockerfile
+  tag: '$(Build.BuildId)'
+
+steps:
+- task: Checkout@1
+
+- task: UseDotNet@2
+  displayName: 'Set up .NET Core SDK'
+  inputs:
+    packageType: 'sdk'
+    version: '8.0.x'  # Adjust this to match your .NET version
+
+- script: dotnet restore
+  displayName: 'Restore NuGet packages'
+
+- script: dotnet build --configuration Release --no-restore
+  displayName: 'Build the application'
+
+- script: dotnet publish --configuration Release --no-build --output $(Build.ArtifactStagingDirectory)
+  displayName: 'Publish the application'
+
+- task: Docker@2
+  displayName: 'Build and Push Docker Image'
+  inputs:
+    command: 'buildAndPush'
+    repository: '$(imageRepository)'
+    dockerfile: '$(dockerfilePath)'
+    tags: '$(tag)'
+    containerRegistry: '$(dockerRegistryServiceConnection)'
