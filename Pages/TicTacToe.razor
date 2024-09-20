@@ -1,0 +1,65 @@
+@page "/tictactoe"
+@using CSharpGames.Models
+@inject IJSRuntime JS
+@implements IDisposable
+
+<h2>Tic Tac Toe Game</h2>
+<canvas @ref="_canvas" width="300" height="300" @onclick="HandleClick"></canvas>
+
+@if (!_game.Running)
+{
+    <p>Game Over! @(_game.CurrentPlayer == "X" || _game.CurrentPlayer == "O" ? $"Player {_game.CurrentPlayer} wins!" : "It's a draw!")</p>
+    <button @onclick="ResetGame">Play Again</button>
+}
+
+@code {
+    private ElementReference _canvas;
+    private TicTacToeGame _game;
+    private DotNetObjectReference<TicTacToe> _objRef;
+
+    protected override void OnInitialized()
+    {
+        _game = new TicTacToeGame();
+        _objRef = DotNetObjectReference.Create(this);
+    }
+
+    protected override async Task OnAfterRenderAsync(bool firstRender)
+    {
+        if (firstRender)
+        {
+            // Initialize canvas and draw the board
+            await JS.InvokeVoidAsync("initializeTicTacToeCanvas", _canvas);
+            await DrawGame();
+        }
+    }
+
+    private async Task DrawGame()
+    {
+        await JS.InvokeVoidAsync("drawTicTacToeGame", _canvas, _game);
+    }
+
+    private async Task HandleClick(MouseEventArgs e)
+    {
+        double mouseX = e.OffsetX;
+        double mouseY = e.OffsetY;
+
+        bool gameEnded = _game.HandleClick(mouseX, mouseY);
+        await DrawGame();
+
+        if (gameEnded)
+        {
+            StateHasChanged();
+        }
+    }
+
+    private async Task ResetGame()
+    {
+        _game.ResetGame();
+        await DrawGame();
+    }
+
+    public void Dispose()
+    {
+        _objRef?.Dispose();
+    }
+}

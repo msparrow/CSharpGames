@@ -1,0 +1,87 @@
+@page "/brickbreaker"
+@using CSharpGames.Models
+@inject IJSRuntime JS
+@implements IDisposable
+
+<h2>Brick Breaker Game</h2>
+<canvas @ref="_canvas" width="800" height="600" tabindex="0"></canvas>
+
+@code {
+    private ElementReference _canvas;
+    private BrickBreakerGame _game;
+    private DotNetObjectReference<BrickBreaker> _objRef;
+    private System.Timers.Timer _timer;
+
+    protected override void OnInitialized()
+    {
+        _game = new BrickBreakerGame();
+        _objRef = DotNetObjectReference.Create(this);
+    }
+
+    protected override async Task OnAfterRenderAsync(bool firstRender)
+    {
+        if (firstRender)
+        {
+            // Set focus to the canvas
+            await JS.InvokeVoidAsync("setCanvasFocus", _canvas);
+
+            // Initialize canvas and input handlers
+            await JS.InvokeVoidAsync("initializeBrickBreakerCanvas", _canvas, _objRef);
+
+            // Draw the initial game state
+            await DrawGame();
+
+            // Start the game loop
+            StartGameLoop();
+        }
+    }
+
+    private void StartGameLoop()
+    {
+        _timer = new System.Timers.Timer(20);
+        _timer.Elapsed += async (sender, args) =>
+        {
+            await InvokeAsync(async () =>
+            {
+                if (_game.Running)
+                {
+                    _game.UpdateGameState();
+                    await DrawGame();
+                    StateHasChanged();
+                }
+                else
+                {
+                    _timer.Stop();
+                    await JS.InvokeVoidAsync("alert", $"Game Over! Bricks destroyed: {_game.BricksDestroyed}");
+                    // Optionally reset the game
+                    _game.ResetGame();
+                    _timer.Start();
+                }
+            });
+        };
+        _timer.Start();
+    }
+
+    [JSInvokable]
+    public void HandleKeyDown(string key)
+    {
+        _game.HandleKeyDown(key);
+    }
+
+    [JSInvokable]
+    public void HandleKeyUp(string key)
+    {
+        _game.HandleKeyUp(key);
+    }
+
+    private async Task DrawGame()
+    {
+        await JS.InvokeVoidAsync("drawBrickBreakerGame", _canvas, _game);
+    }
+
+    public void Dispose()
+    {
+        _timer?.Dispose();
+        _objRef?.Dispose();
+    }
+}

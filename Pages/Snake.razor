@@ -1,0 +1,70 @@
+@page "/snake"
+@using CSharpGames.Models
+@inject IJSRuntime JS
+@implements IDisposable
+
+<h2>Snake Game</h2>
+<canvas @ref="_canvas" width="800" height="600"></canvas>
+
+@code {
+    private ElementReference _canvas;
+    private SnakeGame _game;
+    private DotNetObjectReference<Snake> _objRef;
+    private System.Timers.Timer _timer;
+
+    protected override void OnInitialized()
+    {
+        _game = new SnakeGame();
+        _objRef = DotNetObjectReference.Create(this);
+        StartGameLoop();
+    }
+
+    private void StartGameLoop()
+    {
+        _timer = new System.Timers.Timer(_game.SnakeSpeed);
+        _timer.Elapsed += async (sender, args) =>
+        {
+            await InvokeAsync(async () =>
+            {
+                if (_game.Running)
+                {
+                    _game.Update();
+                    await DrawGame();
+                    StateHasChanged();
+                }
+                else
+                {
+                    _timer.Stop();
+                    await JS.InvokeVoidAsync("alert", "Game Over");
+                }
+            });
+        };
+        _timer.Start();
+    }
+
+    protected override async Task OnAfterRenderAsync(bool firstRender)
+    {
+        if (firstRender)
+        {
+            await JS.InvokeVoidAsync("initializeCanvas", _canvas, _objRef);
+            await DrawGame();
+        }
+    }
+
+    [JSInvokable]
+    public void ChangeDirection(int keyCode)
+    {
+        _game.ChangeDirection(keyCode);
+    }
+
+    private async Task DrawGame()
+    {
+        await JS.InvokeVoidAsync("drawGame", _canvas, _game);
+    }
+
+    public void Dispose()
+    {
+        _timer?.Dispose();
+        _objRef?.Dispose();
+    }
+}

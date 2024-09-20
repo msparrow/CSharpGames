@@ -1,0 +1,89 @@
+{
+  "Files": [
+    {
+      "Id": "c:\\Users\\girof\\OneDrive\\Documents\\CSharpGames\\bin\\Debug\\net8.0\\wwwroot\\_framework\\blazor.webassembly.js",
+      "PackagePath": "staticwebassets\\_framework\\blazor.webassembly.js"
+    },
+    {
+      "Id": "c:\\Users\\girof\\OneDrive\\Documents\\CSharpGames\\obj\\Debug\\net8.0\\compressed\\9flrwgor6t.gz",
+      "PackagePath": "staticwebassets\\_framework\\blazor.webassembly.js.gz"
+    },
+    {
+      "Id": "c:\\Users\\girof\\OneDrive\\Documents\\CSharpGames\\obj\\Debug\\net8.0\\scopedcss\\bundle\\CSharpGames.styles.css",
+      "PackagePath": "staticwebassets\\CSharpGames.styles.css"
+    },
+    {
+      "Id": "c:\\Users\\girof\\OneDrive\\Documents\\CSharpGames\\wwwroot\\css\\app.css",
+      "PackagePath": "staticwebassets\\css\\app.css"
+    },
+    {
+      "Id": "c:\\Users\\girof\\OneDrive\\Documents\\CSharpGames\\wwwroot\\css\\bootstrap\\bootstrap.min.css",
+      "PackagePath": "staticwebassets\\css\\bootstrap\\bootstrap.min.css"
+    },
+    {
+      "Id": "c:\\Users\\girof\\OneDrive\\Documents\\CSharpGames\\wwwroot\\css\\bootstrap\\bootstrap.min.css.map",
+      "PackagePath": "staticwebassets\\css\\bootstrap\\bootstrap.min.css.map"
+    },
+    {
+      "Id": "c:\\Users\\girof\\OneDrive\\Documents\\CSharpGames\\wwwroot\\favicon.png",
+      "PackagePath": "staticwebassets\\favicon.png"
+    },
+    {
+      "Id": "c:\\Users\\girof\\OneDrive\\Documents\\CSharpGames\\wwwroot\\icon-192.png",
+      "PackagePath": "staticwebassets\\icon-192.png"
+    },
+    {
+      "Id": "c:\\Users\\girof\\OneDrive\\Documents\\CSharpGames\\wwwroot\\index.html",
+      "PackagePath": "staticwebassets\\index.html"
+    },
+    {
+      "Id": "c:\\Users\\girof\\OneDrive\\Documents\\CSharpGames\\wwwroot\\js\\brickBreakerInterop.js",
+      "PackagePath": "staticwebassets\\js\\brickBreakerInterop.js"
+    },
+    {
+      "Id": "c:\\Users\\girof\\OneDrive\\Documents\\CSharpGames\\wwwroot\\js\\flappyBirdInterop.js",
+      "PackagePath": "staticwebassets\\js\\flappyBirdInterop.js"
+    },
+    {
+      "Id": "c:\\Users\\girof\\OneDrive\\Documents\\CSharpGames\\wwwroot\\js\\pongInterop.js",
+      "PackagePath": "staticwebassets\\js\\pongInterop.js"
+    },
+    {
+      "Id": "c:\\Users\\girof\\OneDrive\\Documents\\CSharpGames\\wwwroot\\js\\snakeInterop.js",
+      "PackagePath": "staticwebassets\\js\\snakeInterop.js"
+    },
+    {
+      "Id": "c:\\Users\\girof\\OneDrive\\Documents\\CSharpGames\\wwwroot\\js\\spaceInvadersInterop.js",
+      "PackagePath": "staticwebassets\\js\\spaceInvadersInterop.js"
+    },
+    {
+      "Id": "c:\\Users\\girof\\OneDrive\\Documents\\CSharpGames\\wwwroot\\js\\tetrisInterop.js",
+      "PackagePath": "staticwebassets\\js\\tetrisInterop.js"
+    },
+    {
+      "Id": "c:\\Users\\girof\\OneDrive\\Documents\\CSharpGames\\wwwroot\\js\\ticTacToeInterop.js",
+      "PackagePath": "staticwebassets\\js\\ticTacToeInterop.js"
+    },
+    {
+      "Id": "c:\\Users\\girof\\OneDrive\\Documents\\CSharpGames\\wwwroot\\sample-data\\weather.json",
+      "PackagePath": "staticwebassets\\sample-data\\weather.json"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.CSharpGames.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.build.CSharpGames.props",
+      "PackagePath": "build\\CSharpGames.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.buildMultiTargeting.CSharpGames.props",
+      "PackagePath": "buildMultiTargeting\\CSharpGames.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.buildTransitive.CSharpGames.props",
+      "PackagePath": "buildTransitive\\CSharpGames.props"
+    }
+  ],
+  "ElementsToRemove": []
+}

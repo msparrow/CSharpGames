@@ -1,0 +1,81 @@
+@page "/flappybird"
+@using CSharpGames.Models
+@inject IJSRuntime JS
+@implements IDisposable
+
+<h2>Flappy Bird Game</h2>
+<canvas @ref="_canvas" width="800" height="600" tabindex="0"></canvas>
+
+@code {
+    private ElementReference _canvas;
+    private FlappyBirdGame _game;
+    private DotNetObjectReference<FlappyBird> _objRef;
+    private System.Timers.Timer _timer;
+
+    protected override void OnInitialized()
+    {
+        _game = new FlappyBirdGame();
+        _objRef = DotNetObjectReference.Create(this);
+    }
+
+    protected override async Task OnAfterRenderAsync(bool firstRender)
+    {
+        if (firstRender)
+        {
+            // Set focus to the canvas
+            await JS.InvokeVoidAsync("setCanvasFocus", _canvas);
+
+            // Initialize canvas and input handlers
+            await JS.InvokeVoidAsync("initializeFlappyBirdCanvas", _canvas, _objRef);
+
+            // Draw the initial game state
+            await DrawGame();
+
+            // Start the game loop
+            StartGameLoop();
+        }
+    }
+
+    private void StartGameLoop()
+    {
+        _timer = new System.Timers.Timer(20);
+        _timer.Elapsed += async (sender, args) =>
+        {
+            await InvokeAsync(async () =>
+            {
+                if (_game.Running)
+                {
+                    _game.UpdateGameState();
+                    await DrawGame();
+                    StateHasChanged();
+                }
+                else
+                {
+                    _timer.Stop();
+                    await JS.InvokeVoidAsync("alert", $"Game Over! Your score: {_game.Score}");
+                    // Optionally reset the game
+                    _game.ResetGame();
+                    _timer.Start();
+                }
+            });
+        };
+        _timer.Start();
+    }
+
+    [JSInvokable]
+    public void HandleKeyDown(int keyCode)
+    {
+        _game.HandleKeyDown(keyCode);
+    }
+
+    private async Task DrawGame()
+    {
+        await JS.InvokeVoidAsync("drawFlappyBirdGame", _canvas, _game);
+    }
+
+    public void Dispose()
+    {
+        _timer?.Dispose();
+        _objRef?.Dispose();
+    }
+}

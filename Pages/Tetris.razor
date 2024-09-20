@@ -1,0 +1,103 @@
+@page "/tetris"
+@using CSharpGames.Models
+@inject IJSRuntime JS
+@implements IDisposable
+
+<h2>Tetris Game</h2>
+<canvas @ref="_canvas" width="300" height="600" tabindex="0"></canvas>
+
+@code {
+    private ElementReference _canvas;
+    private TetrisGame _game;
+    private DotNetObjectReference<Tetris> _objRef;
+    private System.Timers.Timer _timer;
+
+    protected override void OnInitialized()
+    {
+        _game = new TetrisGame();
+        _objRef = DotNetObjectReference.Create(this);
+    }
+
+    protected override async Task OnAfterRenderAsync(bool firstRender)
+    {
+        if (firstRender)
+        {
+            // Set focus to the canvas
+            await JS.InvokeVoidAsync("setCanvasFocus", _canvas);
+
+            // Initialize canvas and input handlers
+            await JS.InvokeVoidAsync("initializeTetrisCanvas", _canvas, _objRef, _game.Width, _game.Height);
+
+            // Draw the initial game state
+            await DrawGame();
+
+            // Start the game loop
+            StartGameLoop();
+        }
+    }
+
+    private void StartGameLoop()
+    {
+        _timer = new System.Timers.Timer(_game.GameSpeed);
+        _timer.Elapsed += async (sender, args) =>
+        {
+            await InvokeAsync(async () =>
+            {
+                if (!_game.GameOver)
+                {
+                    _game.Update();
+                    await DrawGame();
+                    StateHasChanged();
+                }
+                else
+                {
+                    _timer.Stop();
+                    await JS.InvokeVoidAsync("alert", "Game Over!");
+                    // Optionally reset the game
+                    _game = new TetrisGame();
+                    _timer.Interval = _game.GameSpeed;
+                    _timer.Start();
+                }
+            });
+        };
+        _timer.Start();
+    }
+
+    [JSInvokable]
+    public void HandleKeyDown(string key)
+    {
+        if (_game.GameOver)
+            return;
+
+        switch (key)
+        {
+            case "ArrowLeft":
+                _game.MoveLeft();
+                break;
+            case "ArrowRight":
+                _game.MoveRight();
+                break;
+            case "ArrowDown":
+                _game.MoveDown();
+                break;
+            case "ArrowUp":
+                _game.RotatePiece();
+                break;
+            case " ":
+                _game.Drop();
+                break;
+        }
+        DrawGame().Wait();
+    }
+
+    private async Task DrawGame()
+    {
+        await JS.InvokeVoidAsync("drawTetrisGame", _canvas, _game);
+    }
+
+    public void Dispose()
+    {
+        _timer?.Dispose();
+        _objRef?.Dispose();
+    }
+}
