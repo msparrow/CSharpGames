@@ -1029,3 +1029,4 @@ c:\Users\girof\OneDrive\Documents\CSharpGames\obj\Debug\net8.0\CSharpGames.dll
 c:\Users\girof\OneDrive\Documents\CSharpGames\obj\Debug\net8.0\refint\CSharpGames.dll
 c:\Users\girof\OneDrive\Documents\CSharpGames\obj\Debug\net8.0\CSharpGames.pdb
 c:\Users\girof\OneDrive\Documents\CSharpGames\obj\Debug\net8.0\ref\CSharpGames.dll
+c:\Users\girof\OneDrive\Documents\CSharpGames\obj\Debug\net8.0\CSharpGames.sourcelink.json

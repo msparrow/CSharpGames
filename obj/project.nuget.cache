@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "hwuezy/6CTc=",
+  "dgSpecHash": "559r8x8iqMQ=",
   "success": true,
-  "projectFilePath": "C:\\Users\\girof\\OneDrive\\Documents\\CSharpGames\\CSharpGames.csproj",
+  "projectFilePath": "c:\\Users\\girof\\OneDrive\\Documents\\CSharpGames\\CSharpGames.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\girof\\.nuget\\packages\\microsoft.aspnetcore.authorization\\8.0.8\\microsoft.aspnetcore.authorization.8.0.8.nupkg.sha512",
     "C:\\Users\\girof\\.nuget\\packages\\microsoft.aspnetcore.components\\8.0.8\\microsoft.aspnetcore.components.8.0.8.nupkg.sha512",

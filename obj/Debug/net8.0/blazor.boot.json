@@ -1,7 +1,7 @@
 {
   "mainAssemblyName": "CSharpGames",
   "resources": {
-    "hash": "sha256-yw1F/LfR1LOLsmU8t7tdSeZZv/rUE1NqhORps3zbC1c=",
+    "hash": "sha256-UV1j9jNPvrHcnaZoBu40dkOxn+C950DpwtGde4X49Hg=",
     "jsModuleNative": {
       "dotnet.native.8.0.8.cxlozbkj8z.js": "sha256-juC5sA7gHTLXFEhAKgdM2/RavswpwCtDfjYGsAz2FXg="
     },
@@ -208,10 +208,10 @@
       "mscorlib.wasm": "sha256-Gz8PyW2/fwihe5ul81OwmRUrU71r+KtbyRw6xlOGD+Q=",
       "netstandard.wasm": "sha256-jMTqIQzoDS810lyhZpMO5eEC36EzntXqSVn+2qwkOMQ=",
       "System.Private.CoreLib.wasm": "sha256-NFj5WE5VLP2LptZIRJCUIc1AMk06FmxpsSILfPISwAw=",
-      "CSharpGames.wasm": "sha256-6Rq3+CsUQ48NADuzu5Z50dHkFtdjMM8tjzcFMLnLOgU="
+      "CSharpGames.wasm": "sha256-obrwFI1K+P8l9uULLu1eEF3ZjUmNdmATZ7Jj5uzuIpo="
     },
     "pdb": {
-      "CSharpGames.pdb": "sha256-t/CM4rOY22ZW8Br90cUTGxp185JG+NxQBRoNt0ce8CM="
+      "CSharpGames.pdb": "sha256-6gGMlY8SHf5QB88ANrzsVrIVID80MS7C8qkHQg4wN+E="
     }
   },
   "cacheBootResources": true,

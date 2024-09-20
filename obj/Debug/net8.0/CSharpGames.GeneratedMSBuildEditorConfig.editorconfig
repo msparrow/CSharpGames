@@ -13,67 +13,59 @@ build_property.EnforceExtendedAnalyzerRules =
 build_property._SupportedPlatformList = browser
 build_property.RootNamespace = CSharpGames
 build_property.RootNamespace = CSharpGames
-build_property.ProjectDir = C:\Users\girof\OneDrive\Documents\CSharpGames\
+build_property.ProjectDir = c:\Users\girof\OneDrive\Documents\CSharpGames\
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = false
 build_property.RazorLangVersion = 8.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = C:\Users\girof\OneDrive\Documents\CSharpGames
+build_property.MSBuildProjectDirectory = c:\Users\girof\OneDrive\Documents\CSharpGames
 build_property._RazorSourceGeneratorDebug = 
 
-[C:/Users/girof/OneDrive/Documents/CSharpGames/App.razor]
+[c:/Users/girof/OneDrive/Documents/CSharpGames/App.razor]
 build_metadata.AdditionalFiles.TargetPath = QXBwLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/girof/OneDrive/Documents/CSharpGames/Pages/BrickBreaker.razor]
+[c:/Users/girof/OneDrive/Documents/CSharpGames/Pages/BrickBreaker.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQnJpY2tCcmVha2VyLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/girof/OneDrive/Documents/CSharpGames/Pages/Counter.razor]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ291bnRlci5yYXpvcg==
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/girof/OneDrive/Documents/CSharpGames/Pages/FlappyBird.razor]
+[c:/Users/girof/OneDrive/Documents/CSharpGames/Pages/FlappyBird.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRmxhcHB5QmlyZC5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/girof/OneDrive/Documents/CSharpGames/Pages/Home.razor]
+[c:/Users/girof/OneDrive/Documents/CSharpGames/Pages/Home.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcSG9tZS5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/girof/OneDrive/Documents/CSharpGames/Pages/Pong.razor]
+[c:/Users/girof/OneDrive/Documents/CSharpGames/Pages/Pong.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUG9uZy5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/girof/OneDrive/Documents/CSharpGames/Pages/Snake.razor]
+[c:/Users/girof/OneDrive/Documents/CSharpGames/Pages/Snake.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU25ha2UucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/girof/OneDrive/Documents/CSharpGames/Pages/SpaceInvaders.razor]
+[c:/Users/girof/OneDrive/Documents/CSharpGames/Pages/SpaceInvaders.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU3BhY2VJbnZhZGVycy5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/girof/OneDrive/Documents/CSharpGames/Pages/Tetris.razor]
+[c:/Users/girof/OneDrive/Documents/CSharpGames/Pages/Tetris.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcVGV0cmlzLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/girof/OneDrive/Documents/CSharpGames/Pages/TicTacToe.razor]
+[c:/Users/girof/OneDrive/Documents/CSharpGames/Pages/TicTacToe.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcVGljVGFjVG9lLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/girof/OneDrive/Documents/CSharpGames/Pages/Weather.razor]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcV2VhdGhlci5yYXpvcg==
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/girof/OneDrive/Documents/CSharpGames/_Imports.razor]
+[c:/Users/girof/OneDrive/Documents/CSharpGames/_Imports.razor]
 build_metadata.AdditionalFiles.TargetPath = X0ltcG9ydHMucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/girof/OneDrive/Documents/CSharpGames/Layout/MainLayout.razor]
+[c:/Users/girof/OneDrive/Documents/CSharpGames/Layout/MainLayout.razor]
 build_metadata.AdditionalFiles.TargetPath = TGF5b3V0XE1haW5MYXlvdXQucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = b-gkes5yony3
 
-[C:/Users/girof/OneDrive/Documents/CSharpGames/Layout/NavMenu.razor]
+[c:/Users/girof/OneDrive/Documents/CSharpGames/Layout/NavMenu.razor]
 build_metadata.AdditionalFiles.TargetPath = TGF5b3V0XE5hdk1lbnUucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = b-v0c3ceaczh
