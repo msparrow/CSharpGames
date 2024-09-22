@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "c:\\Users\\girof\\OneDrive\\Documents\\CSharpGames\\CSharpGames.csproj": {}
+    "C:\\Users\\girof\\OneDrive\\Documents\\CSharpGames\\CSharpGames.csproj": {}
   },
   "projects": {
-    "c:\\Users\\girof\\OneDrive\\Documents\\CSharpGames\\CSharpGames.csproj": {
+    "C:\\Users\\girof\\OneDrive\\Documents\\CSharpGames\\CSharpGames.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "c:\\Users\\girof\\OneDrive\\Documents\\CSharpGames\\CSharpGames.csproj",
+        "projectUniqueName": "C:\\Users\\girof\\OneDrive\\Documents\\CSharpGames\\CSharpGames.csproj",
         "projectName": "CSharpGames",
-        "projectPath": "c:\\Users\\girof\\OneDrive\\Documents\\CSharpGames\\CSharpGames.csproj",
+        "projectPath": "C:\\Users\\girof\\OneDrive\\Documents\\CSharpGames\\CSharpGames.csproj",
         "packagesPath": "C:\\Users\\girof\\.nuget\\packages\\",
-        "outputPath": "c:\\Users\\girof\\OneDrive\\Documents\\CSharpGames\\obj\\",
+        "outputPath": "C:\\Users\\girof\\OneDrive\\Documents\\CSharpGames\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\girof\\AppData\\Roaming\\NuGet\\NuGet.Config"
